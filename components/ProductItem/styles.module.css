@@ -1,0 +1,47 @@
+.container {
+    background: #fff;
+    box-shadow: 0 0.5rem 2.5rem rgba(0, 0, 0, 0.08);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.head {
+    height: 5.625rem;
+}
+
+.info {
+    padding: 0.8125rem;
+}
+
+.info .image {
+    text-align: center;
+}
+
+.info .image img {
+    width: 80%;
+    height: auto;
+    margin-top: -5.625rem;
+}
+
+.categoryName, .name, .price {
+    text-decoration: none;
+}
+
+.categoryName, .name {
+    color: #1b1b1b;
+}
+
+.categoryName {
+    font-weight: 500;
+    font-size: 0.875rem;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.price {
+    font-weight: 600;
+    font-size: 0.9375rem;
+}
