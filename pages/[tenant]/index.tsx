@@ -1,11 +1,20 @@
 import { GetServerSideProps } from 'next';
+import { useEffect } from 'react';
 import { Banner } from '../../components/Banner';
 import { ProductItem } from '../../components/ProductItem';
 import { SearchInput } from '../../components/SearchInput';
-import { getTenantResponse, useApi } from '../../services/useApi';
+import { useAppContext } from '../../contexts/AppContext';
+import { useApi } from '../../services/useApi';
 import styles from '../../styles/Home.module.css';
+import { Tenant } from '../../types/Tenant';
 
-const Home = ({ tenant }: Props) => {
+const Home = (props: Props) => {
+  const { tenant, setTenant } = useAppContext();
+
+  useEffect(() => {
+    setTenant(props.tenant)
+  }, []);
+
   const handleSearch = (searchValue: string) => {
     //
   }
@@ -20,15 +29,14 @@ const Home = ({ tenant }: Props) => {
           </div>
           <div className={styles.headerTopRight}>
             <div className={styles.menuButton}>
-              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant.mainColor }}></div>
-              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant.mainColor }}></div>
-              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant.mainColor }}></div>
+              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant?.mainColor }}></div>
+              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant?.mainColor }}></div>
+              <div className={styles.menuButtonLine} style={{ backgroundColor: tenant?.mainColor }}></div>
             </div>
           </div>
         </div>
         <div className={styles.headerBottom}>
           <SearchInput
-            mainColor={tenant.mainColor}
             onSearch={handleSearch}
           />
         </div>
@@ -43,8 +51,6 @@ const Home = ({ tenant }: Props) => {
             price: 25.5,
             categoryName: 'Tradicional'
           }}
-          mainColor={tenant.mainColor}
-          secondaryColor={tenant.secondaryColor}
         />
       </div>
     </div>
@@ -54,7 +60,7 @@ const Home = ({ tenant }: Props) => {
 export default Home;
 
 interface Props {
-  tenant: getTenantResponse
+  tenant: Tenant
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
