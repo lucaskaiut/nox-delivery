@@ -2,3 +2,54 @@
     background-color: #fff;
     padding: 3.125rem 1.5rem;
 }
+
+.header {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.3125rem;
+    color: rgba(27, 27, 27, 0.8);
+    text-align: center;
+    margin: auto;
+    width: 13.9375rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1.5px solid #000;
+    position: relative; 
+}
+
+.line {
+    border-top: 1.5px solid #e2e2e2;
+    margin-top: -1.5px;
+}
+
+.formArea {
+    margin-top: 3.5rem;
+}
+
+.inputArea {
+    margin-bottom: 2rem;
+}
+
+.forgotArea {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: auto;
+    color: #1b1b1b;
+    width: fit-content;
+    positition: relative;
+    padding-bottom: 3.875rem;
+    border-bottom: 1.5px solid #000;
+}
+
+.signUpArea {
+    margin-top: 3.875rem;
+}
