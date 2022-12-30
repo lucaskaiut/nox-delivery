@@ -4,7 +4,7 @@ import { Banner } from '../../components/Banner';
 import { ProductItem } from '../../components/ProductItem';
 import { SearchInput } from '../../components/SearchInput';
 import { useAppContext } from '../../contexts/AppContext';
-import { useApi } from '../../services/useApi';
+import { useApi } from '../../services/api';
 import styles from '../../styles/Home.module.css';
 import { Tenant } from '../../types/Tenant';
 

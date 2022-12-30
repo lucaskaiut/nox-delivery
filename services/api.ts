@@ -4,7 +4,7 @@ interface useApiResponse {
     getTenant: (tenantSlug: string) => boolean | Tenant,
 }
 
-export const useApi = (): useApiResponse => ({
+export const api = (): useApiResponse => ({
     getTenant: (tenantSlug: string): boolean | Tenant => {
         switch (tenantSlug) {
             case 'the-great-burger':

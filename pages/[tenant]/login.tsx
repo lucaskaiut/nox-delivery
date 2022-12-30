@@ -1,10 +1,11 @@
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { useAppContext } from '../../contexts/AppContext';
-import { useApi } from '../../services/useApi';
+import { api as apiService } from '../../services/api';
 import styles from '../../styles/Login.module.css';
 import { Tenant } from '../../types/Tenant';
 
@@ -27,6 +28,10 @@ const Login = (props: Props) => {
       <Header backwardLink={`/${tenant?.slug}`} />
       <Input value={email} placeholder="Digite seu E-Mail" onChange={setEmail}/>
       <Input value={password} placeholder="Digite sua senha" onChange={setPassword} isPassword/>
+      <Button 
+        label="Entrar"
+        onClick={() => {}}
+      />
     </div>
   );
 }
@@ -40,7 +45,7 @@ interface Props {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { tenant: tenantSlug } = context.query;
 
-  const api = useApi();
+  const api = apiService();
 
   const tenant = await api.getTenant(tenantSlug as string);
 
